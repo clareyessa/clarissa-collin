@@ -67,7 +67,8 @@ abundance_plot <- lobster_abundance %>%
   ##labels
   ggtitle("Lobsters by size and region")+
   xlab("Size (mm)") + ylab("Count")
-abundance_plot
+ggsave("figs/abundance_plot.png",abundance_plot)
+
 
 
 ```
