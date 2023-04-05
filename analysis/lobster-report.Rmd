@@ -1,6 +1,6 @@
 ---
 title: "Lobster Report"
-author: "Collin J. Closek"
+author: "Collin J. Closek and Clarissa Reyes"
 date: "2023-04-05"
 output: html_document
 ---
@@ -17,6 +17,7 @@ Data on abundance, size and fishing pressure of California spiny lobster (Panuli
 
 
 # Owner analysis and visualizations
-![abundance_plot](figs/abundance_plot.png)
+![Abundance Plot by region](figs/abundance_plot.png)
+
 # Collaborator visualization 
-![lobster_traps_year](figs/lobster_traps_year.png)
+![Lobster Traps per year](figs/lobster_traps_year.png)
