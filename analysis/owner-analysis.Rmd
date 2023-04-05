@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Packages
+## Packages
 
 ```{r}
 
@@ -19,8 +19,7 @@ library(tidyr)
 
 ```
 
-
-# Pull in data
+## Pull in data
 
 ```{r, message=FALSE, warning=FALSE}
 lobster_abundance <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.8&entityid=f32823fba432f58f66c06b589b7efac6")
@@ -29,14 +28,17 @@ lobster_trap <- read_csv("https://portal.edirepository.org/nis/dataviewer?packag
 #Option2
 #lobster_trap <- read_csv(../data/FILENAME) #.. moves into the higher level out of the analysis folder to read see the data folder
 ```
-# Explore data
+
+## Explore data
 ```{r}
 glimpse(lobster_abundance)
 unique(lobster_abundance$SITE)
 glimpse(lobster_trap)
 ```
 
-### Convert missing values using mutate() and na_if()
+# Create data subsets 
+
+Convert missing values using mutate() and na_if(), apply filters with conditions
 ```{r}
 lobster_abundance <- lobster_abundance %>% 
   mutate(SIZE_MM = na_if(SIZE_MM, -99999)) 
@@ -48,4 +50,15 @@ arroyo_70 <- lobster_abundance %>%
   filter(SITE=="AQUE" | SIZE_MM > 70) #& and && indicate logical AND and | and || indicate logical OR
 ```
 
+# Exercise: Data Visualization
+
+```{r}
+abundance_plot <- lobster_abundance %>% 
+  ggplot(aes(x = SIZE_MM), fill=)+
+    geom_histogram()+
+    facet_wrap(~SITE)
+abundance_plot
+
+
+```
 
