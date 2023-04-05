@@ -54,8 +54,8 @@ arroyo_70 <- lobster_abundance %>%
 
 ```{r}
 abundance_plot <- lobster_abundance %>% 
-  ggplot(aes(x = SIZE_MM), fill=)+
-    geom_histogram()+
+  ggplot(aes(x = SIZE_MM))+
+    geom_histogram(fill="cyan4")+
     facet_wrap(~SITE)+
   ##theme
     theme(
@@ -63,13 +63,24 @@ abundance_plot <- lobster_abundance %>%
       plot.background = element_blank(),
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
-      panel.border = element_blank())+
+      panel.border = element_blank(),
+      plot.title = element_text(hjust = 0.5))+ #hjust = horizontal adjustment
+  ##custom color
+    #scale_fill_manual(values = "cyan4")+ #filling a histogram vs color with line and point 
   ##labels
   ggtitle("Lobsters by size and region")+
   xlab("Size (mm)") + ylab("Count")
+abundance_plot
+
+cc_theme <-    theme(
+      axis.line = element_blank(),
+      plot.background = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.border = element_blank(),
+      plot.title = element_text(hjust = 0.5))
+
 ggsave("figs/abundance_plot.png",abundance_plot)
-
-
 
 ```
 
