@@ -9,22 +9,23 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+#Citation of the data
+Lobster data accessed at [this link](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8) on April 5, 2023.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Data on abundance, size and fishing pressure of California spiny lobster (Panulirus interruptus) are collected along the mainland coast of the Santa Barbara Channel. Spiny lobsters are an important predator in giant kelp forests off southern California. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+#Owner analysis and visualizations (you choose which plots you want to include)
+![abundance_plot](figs/abundance_plot.png)
+
+
+```{r}
+
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+add alternative text to your plots
+plots can be added either with the data visualization code or with Markdown syntax - it’s up to you if you want to include the code or not.
+-Collaborator analysis and visualizations (you choose which plots you want to include)
+add alternative text to your plots
+plots can be added either with the data visualization code or with Markdown syntax - it’s up to you if you want to include the code or not.
