@@ -47,6 +47,10 @@ lobster_traps <- lobster_trap %>%
 
 unique(lobster_traps$TRAPS)
 ```
+## BONUS 
+```{r}
+lobster_traps_mpa <- lobster_traps
+```
 
 ## Exercise: Data Visualization
 ```{r subset TRAPS and plot by YEAR}
