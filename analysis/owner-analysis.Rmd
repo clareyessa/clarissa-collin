@@ -22,8 +22,30 @@ library(tidyr)
 
 # Pull in data
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 lobster_abundance <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.8&entityid=f32823fba432f58f66c06b589b7efac6")
 lobster_trap <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.8&entityid=66dd61c75bda17c23a3bce458c56ed84")
+
+#Option2
+#lobster_trap <- read_csv(../data/FILENAME) #.. moves into the higher level out of the analysis folder to read see the data folder
 ```
+# Explore data
+```{r}
+glimpse(lobster_abundance)
+unique(lobster_abundance$SITE)
+glimpse(lobster_trap)
+```
+
+### Convert missing values using mutate() and na_if()
+```{r}
+lobster_abundance <- lobster_abundance %>% 
+  mutate(SIZE_MM = na_if(SIZE_MM, -99999)) 
+
+not_napl <- lobster_abundance %>% 
+  filter(SITE!="NAPL")
+
+arroyo_70 <- lobster_abundance %>% 
+  filter(SITE=="AQUE" | SIZE_MM > 70) #& and && indicate logical AND and | and || indicate logical OR
+```
+
 
