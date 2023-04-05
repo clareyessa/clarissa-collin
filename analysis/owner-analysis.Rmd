@@ -56,7 +56,17 @@ arroyo_70 <- lobster_abundance %>%
 abundance_plot <- lobster_abundance %>% 
   ggplot(aes(x = SIZE_MM), fill=)+
     geom_histogram()+
-    facet_wrap(~SITE)
+    facet_wrap(~SITE)+
+  ##theme
+    theme(
+      axis.line = element_blank(),
+      plot.background = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.border = element_blank())+
+  ##labels
+  ggtitle("Lobsters by size and region")+
+  xlab("Size (mm)") + ylab("Count")
 abundance_plot
 
 
