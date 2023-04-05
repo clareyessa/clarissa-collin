@@ -52,7 +52,7 @@ arroyo_70 <- lobster_abundance %>%
 
 # Exercise: Data Visualization
 
-```{r}
+```{r, echo=FALSE}
 abundance_plot <- lobster_abundance %>% 
   ggplot(aes(x = SIZE_MM))+
     geom_histogram(fill="cyan4")+

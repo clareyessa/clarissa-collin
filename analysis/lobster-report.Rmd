@@ -3,9 +3,10 @@ title: "Lobster Report"
 author: "Collin J. Closek and Clarissa Reyes"
 date: "2023-04-05"
 output: html_document
+
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE }
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
