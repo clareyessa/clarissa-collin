@@ -48,5 +48,15 @@ lobster_traps <- lobster_trap %>%
 unique(lobster_traps$TRAPS)
 ```
 
+## Exercise: Data Visualization
+```{r subset TRAPS and plot by YEAR}
 
+ggplot(data = lobster_traps, aes(x = TRAPS))+
+  geom_histogram()+
+  facet_wrap(~ YEAR)+
+  ggtitle("Lobster Trap data subset by Traps and Year")
+  
+  
+
+```
 
