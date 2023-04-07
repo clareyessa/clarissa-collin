@@ -47,7 +47,7 @@ lobsters_summarize <- lobster_abundance %>%
   summarize(COUNT = n())
 
 ggplot(data = lobsters_summarize, aes(x = YEAR, y = COUNT)) +
-  geom_point(aes(color = SITE)) +
+  geom_point(aes(color = SITE), shape = 2) +
   geom_line(aes(color = SITE)) 
 ```
 
